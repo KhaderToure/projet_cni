@@ -1,14 +1,28 @@
-
+<?php
+  // Vérifier si le formulaire a été soumis
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      // Vérifier si les champs sont remplis
+      if (!empty($_POST['nomconnexion']) && !empty($_POST['motdepasseconnexion'])) {
+          // Redirection vers une page HTML
+          header("Location: accueil.php");
+          echo "c'est zoooo";
+          exit();
+      } else {
+          // Afficher un message d'erreur si les champs ne sont pas remplis
+          echo "Veuillez remplir tous les champs du formulaire.";
+      }
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Inscription</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet"  href="../CSS/style.css">
 </head>
 <body>
     
-    <img src="/frontend/oneci_logo-removebg-preview.png" alt="logo" id="logo">
+  <img src="../IMG/logo.png" alt="logo" id="logo">
   <div class="containerconnexion" >
     <form method="POST" action="#" id="formulaire_connexion">
         <h1>Connexion</h1>
@@ -72,6 +86,7 @@
                 'top':'10%',
             });
       });
+      
       $('#butconnexion').click(function() {
         var isFormValid = true;
         $('#formulaire_connexion input').each(function() {
@@ -82,7 +97,7 @@
         });
        
         if (isFormValid) {
-          header("Location: accueil.com");
+          //header("Location: ../HTML/accueil.html");
 
           // Ajoutez ici le code pour soumettre le formulaire ou effectuer d'autres actions
         } else {

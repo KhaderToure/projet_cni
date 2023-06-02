@@ -10,7 +10,7 @@ body{
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(rgba(62, 62, 62, 0.749),#bd59089c),url("/frontend/fond.jpg");
+    background: linear-gradient(rgba(62, 62, 62, 0.749),#bd59089c),url("../IMG/fond.jpg");
     background-position: center;
     background-size: cover;
     white-space: nowrap
